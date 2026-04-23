@@ -3,7 +3,7 @@ name = "mp3-blank-remover"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "pydub>=0.25.1",
 ]
