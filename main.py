@@ -15,7 +15,13 @@ def main():
 
     try:
         default_song = AudioSegment.from_mp3(args[1])
-        cutted_parts = split_on_silence(default_song, 2000)
+        cutted_parts = split_on_silence(
+            default_song,
+            min_silence_len=3000,
+            silence_thresh=-30,
+            keep_silence=250,
+            seek_step=5,
+        )
 
         metadatas = mediainfo(args[1])
         tags = metadatas.get("TAG", {})
